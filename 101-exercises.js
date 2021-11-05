@@ -35,12 +35,13 @@ function addToDone(message) {
 
 // The lines below will test your answer. If you see an error, then it means that your answer is incorrect or incomplete.
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_defined to understand this error message.
-assert(doingJSRightNow, true, "Exercise 0"); 
+var doingJSRightNow = true
 
 
 //  Exercise 1
 // On the line below, create a variable named onMarsRightNow and assign it the boolean value of false
 // For more on variables, see https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables
+var onMarsRightNow = false
 
 assert(onMarsRightNow, false, "Exercise 1");
 addToDone("Exercise 1 is correct.");
@@ -49,6 +50,7 @@ addToDone("Exercise 1 is correct.");
 // For more on arrays, see https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays
 // Create a variable named fruits and assign it an array of strings containing the following fruits.
 // mango, banana, guava, kiwi, and strawberry.
+var fruits =("mango", "banana", "guava", "kiwi", "strawberry")
 
 assert(fruits, ["mango", "banana", "guava", "kiwi", "strawberry"], "Exercise 2");
 addToDone("Exercise 2 is correct.");
@@ -56,6 +58,7 @@ addToDone("Exercise 2 is correct.");
 // Exercise 3
 // Create a variable named vegetables and assign it an array of strings containing the following vegetables.
 // eggplant, broccoli, carrot, cauliflower, and zucchini
+var vegetables = ("eggplant", "broccoli", "carrot", "cauliflower", "zucchini")
 
 assert(vegetables, ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"], "Exercise 3");
 addToDone("Exercise 3 is correct.");
@@ -63,6 +66,7 @@ addToDone("Exercise 3 is correct.");
 
 // Exercise 4
 // Create a variable named numbers and assign it an array of numbers, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 assert(numbers, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "Exercise 4");
 addToDone("Exercise 4 is correct.");
@@ -71,7 +75,7 @@ addToDone("Exercise 4 is correct.");
 // Exercise 5
 // Add the string "tomato" to the end of the fruits array. 
 // *Hint* Recommend finding and using a built-in JS operation to add to an array rather than recreating the array.
-
+fruits.push (tomato)
 assert(fruits, ["mango", "banana", "guava", "kiwi", "strawberry", "tomato"], "Exercise 5");
 addToDone("Exercise 5 is correct");
 
