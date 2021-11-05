@@ -92,7 +92,7 @@ addToDone("Exercise 6 is correct")
 // Exercise 7
 // Given the array of numbers defined below, reverse the array of numbers that you created above. 
 var someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-reverse.array 
+reverse.array someNumbers 
 
 
 
