@@ -923,6 +923,13 @@ addToDone("Exercise 59 is correct.")
 // Write a function definition named sumAll that takes in sequence of numbers and
 // returns all the numbers added together.
 
+function sumAll(input){
+    let sum = 0;
+    for (let i = 0; i < input.length; i++) {
+        sum += input[i];
+    }return sum;
+}
+
 assert(sumAll([1, 2, 3, 4]), 10, "Exercise 60");
 assert(sumAll([3, 3, 3]), 9, "Exercise 60");
 assert(sumAll([0, 5, 6]), 11, "Exercise 60");
