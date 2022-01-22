@@ -66,4 +66,4 @@
 <hr>
 
 ### Typos or misspellings
-If you notice any typos, misspellings, or mistakes, please triple check your work and [open an issue on GitHub](https://github.com/ryanorsinger/101-exercises-js/issues) citing both the line number and exercise number.
+If you notice any typos, misspellings, or mistakes, please triple check your work and [open an issue on GitHub](https://github.com/ryanorsinger/101-exercises-js/issues) citing both the line number and exercise number.# 101_Javascript_exercises
