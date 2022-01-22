@@ -935,42 +935,65 @@ assert(sumAll([3, 3, 3]), 9, "Exercise 60");
 assert(sumAll([0, 5, 6]), 11, "Exercise 60");
 addToDone("Exercise 60 is correct.")
 
-
-
 //  Exercise 61
 //  Write a function definition named mean that takes in sequence of numbers and returns the average value
+
+function mean(sequence){
+    let sum = 0;
+    let avg = 0;
+    for (let i = 0; i < sequence.length; i++) {
+        sum += sequence[i];
+        avg = sum / sequence.length;
+    }return avg;
+}
 
 assert(mean([1, 2, 3, 4]), 2.5, "Exercise 61");
 assert(mean([3, 3, 3]), 3, "Exercise 61");
 assert(mean([1, 5, 6]), 4, "Exercise 61");
 addToDone("Exercise 61 is correct.")
 
-
-
 // Exercise 62
 // Write a function definition named median that takes in sequence of numbers and returns the average value
 
+function median(inputArr) {
+    const middle = Math.floor(inputArr.length / 2),
+        sortedArray = inputArr.sort((a, b) => a - b);
+    if(inputArr.length % 2 !== 0){
+        return sortedArray[middle]
+    }else{
+        return (sortedArray[middle - 1] + sortedArray[middle]) / 2;
+    }
+}
 assert(median([1, 2, 3, 4, 5]), 3.0, "Exercise 62");
 assert(median([1, 2, 3]), 2.0, "Exercise 62");
 assert(median([1, 5, 6]), 5.0, "Exercise 62");
 assert(median([1, 2, 5, 6]), 3.5, "Exercise 62");
 addToDone("Exercise 62 is correct.")
 
-
 // Exercise 63
 // Write a function definition named maxMinusMin that takes in an array of numbers and
 // returns the difference of the maximum minus theminimum.
 
+function maxMinusMin(inArr){
+let sortArray = inArr.sort(((a, b) => a - b));
+    return sortArray[sortArray.length - 1] - sortArray[0];
+}
 
 assert(maxMinusMin([1, 2, 2, 8, 3, 4]), 7, "Exercise 63");
 assert(maxMinusMin([1, 1, 2, 3, 9]), 8, "Exercise 63");
 assert(maxMinusMin([2, 2, 3, 3, 3, 7]), 5, "Exercise 63");
 addToDone("Exercise 63 is correct.")
 
-
 // Exercise 64
 // Write a function definition named productOfAll that takes in sequence of numbers and
 // returns the product of multiplying all the numbers together
+
+function productOfAll(sequence){
+    let prodSeq = 1;
+    for (let i = 0; i < sequence.length; i++) {
+        prodSeq *= sequence[i]
+    }return prodSeq;
+}
 
 assert(productOfAll([1, 2, 3]), 6, "Exercise 64");
 assert(productOfAll([3, 4, 5]), 60, "Exercise 64");
