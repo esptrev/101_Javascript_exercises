@@ -1,14 +1,24 @@
-var arr = ["maryyy", "havenots", "bluue", "little", "lamb", "january"];
-
-console.log(
-    arr.reduce((a, b) => a.length <= b.length ? a : b))
-
-
-// function shortestString(object){
+// function validatePIN (pin) {
 //
+//         if (pin.length !== 4 || pin.length !== 6){
+//             return false;
+//         }
+//     }
+//     return true;
 // }
-//
-// assert(shortestString(["kiwi", "mango", "strawberry"]), "kiwi", "Exercise 81");
-// assert(shortestString(["hello", "everybody"]), "hello", "Exercise 81");
-// assert(shortestString(["mary", "had", "a", "little", "lamb"]), "a", "Exercise 81");
-// addToDone("Exercise 81 is correct.")
+
+
+function validatePIN(pin) {
+    let ppp = parseInt(pin);
+    console.log(ppp);
+    if (ppp.length !== 4 && ppp.length !== 6){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+console.log(validatePIN('1234'));
+
+console.log('new task');
+

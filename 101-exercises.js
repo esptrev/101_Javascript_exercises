@@ -1329,16 +1329,22 @@ addToDone("Exercise 82 is correct.")
 // Write a function definition named getUniqueValues that takes in an array and
 // returns an array with only the unique values from that array.
 
+function getUniqueValues(values){
+    return [...new Set(values)];
+}
+
 assert(getUniqueValues(["ant", "ant", "mosquito", "mosquito", "ladybug"]), ["ant", "mosquito", "ladybug"], "Exercise 83");
-assert(getUniqueValues(["b", "a", "n", "a", "n", "a", "s"]), ["b", "a", "n", "s"], "Exercise 83");
+assert(getUniqueValues(["b", "a", "n", "a", "n", "a", "s"]), ["b", "a", "n", "s"], cd"Exercise 83");
 assert(getUniqueValues(["mary", "had", "a", "little", "lamb", "little", "lamb", "little", "lamb"]), ["mary", "had", "a", "little", "lamb"], "Exercise 83");
 addToDone("Exercise 83 is correct.")
-
 
 // Exercise 84
 // Write a function definition named elementsTimesTwo that takes in an array of numbers
 // and returns an array with each value multiplied by 2.
 
+function elementsTimesTwo(oreos){
+    return oreos.map(x => x * 2);
+}
 
 assert(elementsTimesTwo([1, 2, 3]), [2, 4, 6], "Exercise 84")
 assert(elementsTimesTwo([0, 0, 0]), [0, 0, 0], "Exercise 84")
@@ -1349,22 +1355,26 @@ addToDone("Exercise 84 is correct.")
 // Exercise 85
 // Write a function named flatten that takes in an array of arrays. Return the flattened array.
 
+function flatten(objects){
+    return objects.flat();
+}
 
 assert(flatten([[1, 2], [3, 4], [5, 6]]), [1, 2, 3, 4, 5, 6], "Exercise 85");
 assert(flatten([[1, 2, 3], [1, 2, 3], [1, 2, 3]]), [1, 2, 3, 1, 2, 3, 1, 2, 3], "Exercise 85");
 assert(flatten([["tomato", "mango", "kiwi"], ["eggplant", "broccoli"]]), ["tomato", "mango", "kiwi", "eggplant", "broccoli"], "Exercise 85");
 addToDone("Exercise 85 is correct.")
 
-
-
 // Exercise 86
 // Write a function definition named addOneToArray that adds one to every number in an array
+
+function addOneToArray(addOne){
+    return addOne.map(a => a + 1);
+}
 
 assert(addOneToArray([1, 2, 3]), [2, 3, 4], "Exercise 86");
 assert(addOneToArray([4, 4, 4]), [5, 5, 5], "Exercise 86");
 assert(addOneToArray([9, 10, 11]), [10, 11, 12], "Exercise 86");
 addToDone("Exercise 86 is correct.")
-
 
 // Working with JS Objects
 
@@ -1387,19 +1397,25 @@ const thomasPaper = {
 // Exercise 87
 // Write a function named getPaperTitle that takes in a object and returns the title property
 
+function getPaperTitle(objArr){
+    return objArr.title;
+}
+
 assert(getPaperTitle(tukeyPaper), "The Future of Data Analysis", "Exercise 87");
 assert(getPaperTitle(thomasPaper), "A mathematical model of glutathione metabolism", "Exercise 87");
 addToDone("Exercise 87 is correct.")
-
 
 // Exercise 88
 // Write a function named getYearPublished that takes in an objects and
 // returns the value behind the "year_published" key.
 
+function getYearPublished(pubs){
+    return pubs.year_published;
+}
+
 assert(getYearPublished(tukeyPaper), 1962, "Exercise 88");
 assert(getYearPublished(thomasPaper), 2008, "Exercise 88");
 addToDone("Exercise 88 is correct.")
-
 
 // this code defines a JS object with information about a book.
 const book = {
@@ -1411,19 +1427,23 @@ const book = {
 // Exercise 89
 // Write a function named getPrice that takes in a object and returns the price
 
+function getPrice(books){
+    return books.price;
+}
+
 assert(getPrice(book), 36.99, "Exercise 89");
 addToDone("Exercise 89 is complete.")
-
-
 
 // Exercise 90
 // Write a function named getBookAuthor that takes in a object
 // (the above declared book variable) and returns the author's name
 
+function getBookAuthor(bots){
+    return bots.author;
+}
 
 assert(getBookAuthor(book), "Frances Buontempo", "Exercise 90");
 addToDone("Exercise 90 is complete.")
-
 
 // The next exercises work with a arrays of objects.
 // You'll see arrays of objects over and over again with data in a program. 
@@ -1456,32 +1476,44 @@ const books = [
 // Write a function named getNumberOfBooks that takes in a array of objects and
 // returns the number of objects in that array.
 
+function getNumberOfBooks(pretzels){
+    return pretzels.length;
+}
+
 assert(getNumberOfBooks(books), 4, "Exercise 91");
 addToDone("Exercise 91 is complete.")
-
-
 
 // Exercise 92
 // Write a function named totalOfBookPrices that takes in a array of objects and
 // returns the sum total of all the book prices added together
 
+function totalOfBookPrices(books){
+    return books.map(book => book.price).reduce((a , b) => a + b, 0);
+}
+
 assert(totalOfBookPrices(books), 122.9, "Exercise 92")
 addToDone("Exercise 92 is complete.")
-
 
 // Exercise 93
 // Write a function named getAverageBookPrice that takes in a array of objects and
 // returns the average book price.
 
+function getAverageBookPrice(libras){
+    return libras.map(libras => libras.price).reduce((a , b) => a + b, 0) / libras.length
+}
+
 assert(getAverageBookPrice(books), 30.725, "Exercise 93");
 addToDone("Exercise 93 is complete.")
-
 
 // Exercise 94
 // Write a function called highestPriceBook that takes in the above defined array of objects "books" and
 // returns the object containing the title, price, and author of the book with the highest priced book.
 // Hint: Much like sometimes start functions with a variable set to zero,
 // you may want to create a object with the price set to zero to compare to each object's price in the array
+
+function highestPriceBook(books){
+    return books.reduce((a, b) => b.price <= a.price ? a : b);
+}
 
 assert(highestPriceBook(books), {
     "title": "The Visual Display of Quantitative Information",
@@ -1491,14 +1523,15 @@ assert(highestPriceBook(books), {
 
 addToDone("Exercise 94 is complete")
 
-
-
 // Exercise 95
 // Write a function called lowestPriceBook that takes in the above defined array of objects "books" and
 // returns the object containing the title, price, and author of the book with the lowest priced book.
 // Hint: Much like sometimes start functions with a variable set to zero or float('inf'), you may
 // want to create a object with the price set to float('inf') to compare to each object in the array
 
+function lowestPriceBook(pages){
+    return pages.reduce((a , b) => a.price <= b.price ? a:b);
+}
 
 assert(lowestPriceBook(books), {
     "title": "Weapons of Math Destruction",
@@ -1544,10 +1577,12 @@ const shoppingCart = {
 // Write a function named getTaxRate that takes in the above shopping cart as input and returns the tax rate.
 // Hint: How do you access a key's value on a object? The tax rate is one key of the entire shoppingCart object.
 
+function getTaxRate(shoppingCart){
+    return shoppingCart.tax;
+}
+
 assert(getTaxRate(shoppingCart), .08, "Exercise 96");
 addToDone("Exercise 96 is complete")
-
-
 
 // Exercise 97
 // Write a function named numberOfItemTypes that takes in the shopping cart as input and
@@ -1555,20 +1590,29 @@ addToDone("Exercise 96 is complete")
 // We're not yet using the quantity of each item, but rather focusing on determining how
 // many different types of items are in the cart.
 
+function numberOfItemTypes(groceries){
+    let unique = [...new Set(groceries.items)];
+    return unique.length;
+}
+
 assert(numberOfItemTypes(shoppingCart), 5, "Exercise 97");
 addToDone("Exercise 97 is complete.")
-
-
 
 // Exercise 98
 // Write a function named totalNumberOfItems that takes in the shopping cart as input and
 // returns the total number all item quantities.
 // This should return the sum of all of the quantities from each item type
 
+function totalNumberOfItems(cart){
+    let total = 0;
+    for (let i = 0; i < cart.items.length; i++) {
+        total += cart.items[i].quantity;
+    }
+    return total;
+}
+
 assert(totalNumberOfItems(shoppingCart), 17, "Exercise 98");
 addToDone("Exercise 98 is complete.")
-
-
 
 // Exercise 99
 // Write a function named getAverageItemPrice that takes in the shopping cart as an input and
